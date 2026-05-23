@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Event Registration Form</title>
+
+    <style>
+        body {
+
+            background-color: #e7d5d5;
+        }
+
+        form {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        output {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form onsubmit="showMessage(event)">
+
+        <h2>Event Registration</h2>
+
+        <input type="text" placeholder="Enter your name" required autofocus>
+
+        <input type="email" placeholder="Enter your email" required>
+
+        <input type="date" required>
+
+        <select required>
+            <option value="">Select Event Type</option>
+            <option>Workshop</option>
+            <option>Seminar</option>
+            <option>Hackathon</option>
+        </select>
+
+        <textarea placeholder="Enter your message"></textarea>
+
+        <button type="submit">
+            Register

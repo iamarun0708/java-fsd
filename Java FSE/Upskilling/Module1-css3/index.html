@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* body background styling */
+        body {
+            background-color: #dfe6d3;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.4),
+                    rgba(255, 255, 255, 0.4));
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="mainHeader">
+
+        <h1 style="color:red;">
+            Community Event Portal
+        </h1>
+        <p>
+            Welcome to our local community events website
+        </p>
+
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <li><a href="#">Home</a></li>
+
+            <li><a href="#events">Events</a></li>
+
+            <li><a href="#footer">Contact</a></li>
+
+            <li>
+                <a href="help.html" target="_blank">
+                    Help
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <section id="events">
+
+        <h2>Past Events</h2>
+
+        <div class="eventCard">
+
+            <table>
+
+                <tr>
+
+                    <td>
+                        <img src="./src/img1.webp" class="eventImg" alt="event image" title="Community Event"
+                            ondblclick="enlargeImage(this)">
+                    </td>
+
+                    <td>
+                        <img src="./src/img2.webp" class="eventImg" alt="event image" title="Workshop Event"
+                            ondblclick="enlargeImage(this)">
+                    </td>
+
+                    <td>
+                        <img src="./src/img3.webp" class="eventImg" alt="event image" title="Hackathon Event"
+                            ondblclick="enlargeImage(this)">
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Community Meeting</td>
+
+                    <td>Workshop Program</td>
+
+                    <td>Hackathon Event</td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <section id="newsSection">
+
+        <h2>Community Bulletin</h2>
+
+        <div class="newsArticle">
+
+            Our local community events are growing every month.
+            Many students and residents are participating in
+            workshops, seminars and technical programs.
+            The city council is encouraging everyone to join
+            and improve community engagement.
+            Special events and awareness programs are conducted
+            regularly for students and professionals.
+            Residents are requested to register early because
+            seats are limited for many workshops and activities.
+
+        </div>
+
+    </section>
+
+    <section id="footer">
+
+        <h2>Event Registration Form</h2>
+
+        <form onsubmit="submitForm(event)">
+
+            <input type="text" placeholder="Enter your name" required autofocus>
+
+            <input type="email" placeholder="Enter your email" required>
+
+            <input type="date" required>
+
+            <input type="text" id="phone" placeholder="Enter phone number" onblur="validatePhone()" required>
+
+            <select id="eventType" onchange="showFee()" required>
+
+                <option value="">
+                    Select Event
+                </option>
+
+                <option value="500">
+                    Workshop
+                </option>
+
+                <option value="1000">
+                    Seminar
+                </option>
+
+                <option value="1500">
+                    Hackathon
+                </option>
+
+            </select>
+
+            <p id="fee"></p>
+
+            <textarea id="feedback" placeholder="Enter feedback" onkeyup="countCharacters()"></textarea>
+
+            <p>
+                Characters :
+                <span id="count">0</span>
+            </p>
+
+            <button type="submit">
+                Submit
+            </button>
+
+        </form>
+
+    </section>
+
+    <script>
+
+        function validatePhone() {
+
+            let phone =
+                document.getElementById("phone").value;
+
+            if (phone.length != 10) {
+
+                alert("Phone number should contain 10 digits");
+
+            }
+
+        }
+
+        function showFee() {
+
+            let fee =
+                document.getElementById("eventType").value;
+
+            document.getElementById("fee").innerHTML =
+                "Selected Event Fee : ₹" + fee;
+
+        }
+
+        function countCharacters() {
+
+            let text =
+                document.getElementById("feedback").value;
+
+            document.getElementById("count").innerHTML =
+                text.length;
+
+        }
+
+        function enlargeImage(image) {
+
+            image.style.width = "500px";
+
+            image.style.height = "350px";
+
+        }
+
+        function submitForm(event) {
+
+            event.preventDefault();
+
+            alert("Registration Submitted Successfully");
+
+        }
+
+        window.onbeforeunload = function () {
+
+            return "Are you sure you want to leave this page?";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

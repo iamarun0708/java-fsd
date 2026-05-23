@@ -1,0 +1,299 @@
+/* universal selector */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* body styling */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* body background styled internally in index.html */
+}
+
+
+/* main header styling */
+
+#mainHeader {
+    background: linear-gradient(to right,
+            #2b2bbd,
+            #5a5ac8);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 5vh 2vw;
+    /* responsive padding using vh/vw */
+}
+
+/* header heading size */
+#mainHeader h1 {
+    font-size: 2.5rem;
+}
+
+/* header paragraph styling */
+#mainHeader p {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+
+/* navigation styling */
+
+nav {
+    background-color: rgba(120, 120, 255, 0.9);
+    padding: 15px;
+}
+
+
+/* remove bullets */
+
+nav ul {
+    list-style-type: none;
+    list-style-position: inside;
+    /* list position */
+    text-align: center;
+}
+
+
+/* list item spacing */
+
+nav ul li {
+    display: inline-block;
+    margin: 10px;
+    padding: 5px 15px;
+    /* list spacing */
+}
+
+
+/* link styling */
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* visited link */
+
+a:visited {
+    color: purple;
+}
+
+
+/* hover effect */
+
+a:hover {
+    color: blue;
+}
+
+
+/* active link */
+
+a:active {
+    color: red;
+}
+
+
+/* heading style */
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    /* heading size */
+}
+
+
+/* paragraph style */
+
+h3,
+p {
+    line-height: 1.6;
+    font-size: 1rem;
+    /* paragraph size */
+}
+
+
+/* event section */
+
+#events {
+    padding: 30px;
+}
+
+
+/* event card */
+
+.eventCard {
+    border: 2px solid gray;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* table styling */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* table background */
+}
+
+
+/* table cells */
+
+td,
+th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* header cells background styling */
+th {
+    background-color: #2b2bbd;
+    color: white;
+}
+
+
+/* zebra striping */
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* image styling */
+
+.eventImg {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* news section */
+
+#newsSection {
+    padding: 30px;
+}
+
+
+/* multi column layout */
+
+.newsArticle {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid gray;
+}
+
+
+/* footer section */
+
+#footer {
+    background-color: #5a5ac8;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+
+/* form styling */
+
+form {
+    width: 350px;
+    margin: auto;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/* input fields */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    /* remove static outline */
+}
+
+/* outline on focus */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #2b2bbd;
+}
+
+
+/* fee text */
+
+#fee {
+    color: blue;
+    font-weight: bold;
+}
+
+
+/* button styling */
+
+button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* responsive design */
+
+@media screen and (max-width:768px) {
+
+    nav ul li {
+        display: block;
+        margin: 10px;
+    }
+
+    .eventImg {
+        height: 180px;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    .newsArticle {
+        column-count: 1;
+    }
+
+    /* reduce font sizes on smaller screens */
+    #mainHeader h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #mainHeader p {
+        font-size: 0.9rem;
+    }
+
+}
