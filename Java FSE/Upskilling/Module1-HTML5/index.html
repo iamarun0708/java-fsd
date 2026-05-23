@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Event Portal</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        #navbar {
+            background-color: #b7b7ff;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        #navbar a {
+            text-decoration: none;
+            color: black;
+            margin: 15px;
+            font-size: 18px;
+        }
+
+        #navbar a:hover {
+            color: blue;
+        }
+
+        #welcomeBanner {
+            background-color: #2b2bbd;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .highlight {
+            background-color: yellow;
+            color: black;
+            display: inline-block;
+            padding: 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkred;
+        }
+
+        #events {
+            background-color: #7a7af3;
+            text-align: center;
+            padding: 30px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        .eventImg {
+            width: 100%;
+            height: 250px;
+            border-radius: 8px;
+            border: 3px solid white;
+            object-fit: cover;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        #footer {
+            background-color: #5a5ac8;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        form {
+            background-color: white;
+            color: black;
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        #fee {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar">
+        <a href="#">Home</a>
+        <a href="#events">Events</a>
+        <a href="#footer">Contact</a>
+        <a href="help.html" target="_blank">Help</a>
+    </div>
+
+    <div id="welcomeBanner">
+
+        <h1>Welcome to Community Events</h1>
+
+        <span style="color:red; font-weight:bold; font-size:28px;">
+            Special Offer!
+        </span>
+
+        <p>
+            First 20 registrations will get 10% discount
+        </p>
+
+        <p class="highlight">
+            Hurry! Seats are Limited
+        </p>
+
+        <br>
+
+        <a href="register.html" target="_blank">
+            <button>
+                Register Now
+            </button>
+        </a>
+
+    </div>
+
+    <div id="events">
+
+        <h1>Past Event Images</h1>
+
+        <table>
+
+            <tr>
+
+                <td>
+                    <img src="./src/img1.webp" class="eventImg" ondblclick="enlargeImage(this)" alt="event image">
+                </td>
+
+                <td>
+                    <img src="./src/img2.webp" class="eventImg" ondblclick="enlargeImage(this)" alt="event image">
+                </td>
+
+                <td>
+                    <img src="./src/img3.webp" class="eventImg" ondblclick="enlargeImage(this)" alt="event image">
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div id="footer">
+
+        <h1>Contact Us</h1>
+
+        <p>Email : communityevents@gmail.com</p>
+        <p>Phone : 9876543210</p>
+
+        <h2>Feedback Form</h2>
+
+        <form onsubmit="submitForm(event)">
+
+            Name:
+            <input type="text" placeholder="Enter your name" required autofocus>
+
+            Email:
+            <input type="email" placeholder="Enter your email" required>
+
+            Phone:
+            <input type="text" id="phone" placeholder="Enter phone number" onblur="validatePhone()" required>
+
+            Event Type:
+            <select id="eventType" onchange="showFee()" required>
+
+                <option value="">Select Event</option>
+                <option value="500">Workshop</option>
+                <option value="1000">Hackathon</option>
+                <option value="1500">Seminar</option>
+
+            </select>
+
+            <p id="fee"></p>
+
+            Feedback:
+            <textarea id="feedback" placeholder="Enter your feedback" onkeyup="countCharacters()"></textarea>
+
+            <p>
+                Characters Typed :
+                <span id="count">0</span>
+            </p>
+
+            <button type="submit">
+                Submit Feedback
+            </button>
+
+        </form>
+
+    </div>
+
+    <script>
+
+        function validatePhone() {
+
+            let phone =
+                document.getElementById("phone").value;
+
+            if (phone.length != 10) {
+
+                alert("Phone number should contain 10 digits");
+
+            }
+        }
+
+        function showFee() {
+
+            let fee =
+                document.getElementById("eventType").value;
+
+            document.getElementById("fee").innerHTML =
+                "Event Fee : ₹" + fee;
+
+        }
+
+        function countCharacters() {
+
+            let text =
+                document.getElementById("feedback").value;
+
+            document.getElementById("count").innerHTML =
+                text.length;
+
+        }
+
+        function enlargeImage(image) {
+
+            image.style.width = "500px";
+            image.style.height = "350px";
+
+        }
+
+        function submitForm(event) {
+
+            event.preventDefault();
+
+            alert("Feedback Submitted Successfully!");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
