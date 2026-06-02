@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloading...</title>
+  <link rel="stylesheet" href="download_window.css">
+</head>
+<body>
+  <div class="window-container">
+    <!-- Header Summary -->
+    <header class="window-header">
+      <div class="file-summary">
+        <span id="file-ext-badge" class="file-ext-badge">DAT</span>
+        <h2 id="txt-filename">file_name.zip</h2>
+      </div>
+      <span id="txt-status-badge" class="status-badge active">DOWNLOADING</span>
+    </header>
+
+    <!-- Details Table -->
+    <main class="window-details">
+      <div class="detail-row">
+        <span class="detail-label">Source URL:</span>
+        <span id="txt-url" class="detail-value" title="URL">https://example.com/file.zip</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">File Size:</span>
+        <span id="txt-size" class="detail-value">--</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Downloaded:</span>
+        <span id="txt-downloaded" class="detail-value">--</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Transfer Rate:</span>
+        <span id="txt-speed" class="detail-value">--</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Time Left:</span>
+        <span id="txt-time-left" class="detail-value">--</span>
+      </div>
+    </main>
+
+    <!-- Progress Section -->
+    <section class="progress-section">
+      <div class="progress-bar-container">
+        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+        <span id="txt-progress-percent" class="progress-percent">0%</span>
+      </div>
+    </section>
+
+    <!-- Segment Connections (IDM Classic Progress Grid) -->
+    <section class="segments-section">
+      <div class="segments-header">Parallel Connection Segments:</div>
+      <div id="segments-grid" class="segments-grid">
+        <!-- populated dynamically with 8 or more segment bars -->
+      </div>
+    </section>
+
+    <!-- Footer Controls -->
+    <footer class="window-footer">
+      <div class="footer-actions-left">
+        <button id="btn-open-file" class="action-btn btn-success" disabled>Open File</button>
+        <button id="btn-open-folder" class="action-btn btn-success" disabled>Open Folder</button>
+      </div>
+      <div class="footer-actions-right">
+        <button id="btn-pause-resume" class="action-btn btn-primary">Pause</button>
+        <button id="btn-cancel" class="action-btn btn-danger">Cancel</button>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="download_window.js"></script>
+</body>
+</html>

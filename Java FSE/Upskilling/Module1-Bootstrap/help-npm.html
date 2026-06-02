@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Setup Help</title>
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index-npm.html">Bootstrap 5</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index-npm.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard-npm.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register-npm.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="help-npm.html">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <h1 class="display-6 fw-bold mb-4">Bootstrap Structure and Setup</h1>
+
+        <div class="row g-4">
+            <section class="col-md-4">
+                <div class="card h-100 border-primary">
+                    <div class="card-body">
+                        <h2 class="h5 card-title text-primary">CSS Folder</h2>
+                        <p class="card-text">Contains all Bootstrap stylesheets, utilities, grids, and minified variations (`bootstrap.min.css`).</p>
+                    </div>
+                </div>
+            </section>
+            <section class="col-md-4">
+                <div class="card h-100 border-success">
+                    <div class="card-body">
+                        <h2 class="h5 card-title text-success">JS Folder</h2>
+                        <p class="card-text">Contains JavaScript plugins for components like modals, popovers, and accordions (`bootstrap.bundle.min.js`).</p>
+                    </div>
+                </div>
+            </section>
+            <section class="col-md-4">
+                <div class="card h-100 border-warning">
+                    <div class="card-body">
+                        <h2 class="h5 card-title text-warning">Icons Folder</h2>
+                        <p class="card-text">Contains font files and CSS configurations for embedding Bootstrap Icons inside custom interfaces.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="mt-5">
+            <h2 class="h4">NPM and Sass Customization</h2>
+            <pre class="bg-dark text-white p-3 rounded"><code>npm install bootstrap
+npm install bootstrap-icons
+npm install -D sass
+npx sass scss/custom.scss css/custom.css</code></pre>
+        </section>
+    </main>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

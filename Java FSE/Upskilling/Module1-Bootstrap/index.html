@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Exercises</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body class="pb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Bootstrap 5</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary bg-gradient text-white py-5">
+        <div class="container">
+            <h1 class="display-1 fw-bold text-uppercase">Bootstrap 5 Exercises</h1>
+            <p class="lead text-white-50 text-capitalize">Responsive grid, utilities, forms, components, and plugins.</p>
+            <button class="btn btn-light me-2" data-bs-toggle="modal" data-bs-target="#eventModal">Open Modal</button>
+            <button class="btn btn-outline-light">Explore</button>
+        </div>
+    </header>
+
+    <main class="container py-4">
+        <section class="mb-5">
+            <h2 class="h4 mb-3">Responsive Grid</h2>
+            <div class="row g-3">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="p-3 bg-primary text-white rounded">Column 1</div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="p-3 bg-success text-white rounded">Column 2</div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="p-3 bg-warning text-dark rounded">Column 3</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="h4 mb-3">Column Layouts</h2>
+            <div class="row g-3">
+                <aside class="col-md-3">
+                    <div class="p-3 bg-light border rounded">Sidebar (col-md-3)</div>
+                </aside>
+                <div class="col-md-9">
+                    <div class="p-3 bg-light border rounded">Content Area (col-md-9)</div>
+                </div>
+            </div>
+            <div class="row g-3 mt-1">
+                <div class="col-sm-3"><div class="p-3 border rounded text-center">Col 1</div></div>
+                <div class="col-sm-3"><div class="p-3 border rounded text-center">Col 2</div></div>
+                <div class="col-sm-3"><div class="p-3 border rounded text-center">Col 3</div></div>
+                <div class="col-sm-3"><div class="p-3 border rounded text-center">Col 4</div></div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="h4 mb-3">Alignment, Reordering, and Flex</h2>
+            <div class="row justify-content-center align-items-center g-3 bg-light rounded py-4">
+                <div class="col-md-4 order-md-2">
+                    <div class="p-3 bg-info text-dark rounded text-center">Second on Desktop (order-md-2)</div>
+                </div>
+                <div class="col-md-4 order-md-1">
+                    <div class="p-3 bg-secondary text-white rounded text-center">First on Desktop (order-md-1)</div>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 mt-3 p-3 border rounded bg-white">
+                <span class="fw-bold">Responsive Flex Navbar</span>
+                <div class="d-flex gap-2">
+                    <a class="btn btn-sm btn-outline-primary" href="#">Home</a>
+                    <a class="btn btn-sm btn-outline-primary" href="#">Events</a>
+                    <a class="btn btn-sm btn-outline-primary" href="#">Contact</a>
+                </div>
+            </div>
+            <div class="card mt-3 shadow-sm">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <span>Card Item (Left)</span>
+                    <button class="btn btn-primary btn-sm">Action (Right)</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="h4 mb-3">Typography and Buttons</h2>
+            <p class="display-1">display-1</p>
+            <p class="lead">Lead paragraph with <span class="text-muted">muted text</span> and <span class="fw-bold">bold text</span>.</p>
+            <p class="text-uppercase">uppercase text</p>
+            <p class="text-lowercase">LOWERCASE TEXT</p>
+            <p class="text-capitalize">capitalized text sample</p>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-danger">Danger</button>
+                <button class="btn btn-warning">Warning</button>
+                <button class="btn btn-info">Info</button>
+                <button class="btn btn-light">Light</button>
+                <button class="btn btn-dark">Dark</button>
+                <button class="btn btn-link">Link</button>
+            </div>
+            <div class="d-flex flex-wrap gap-2 mt-2">
+                <button class="btn btn-outline-primary">Outline Primary</button>
+                <button class="btn btn-outline-secondary">Outline Secondary</button>
+                <button class="btn btn-outline-success">Outline Success</button>
+                <button class="btn btn-outline-danger">Outline Danger</button>
+                <button class="btn btn-outline-warning">Outline Warning</button>
+                <button class="btn btn-outline-info">Outline Info</button>
+                <button class="btn btn-outline-dark">Outline Dark</button>
+            </div>
+            <div class="btn-group mt-3" role="group" aria-label="Toggle buttons">
+                <input type="checkbox" class="btn-check" id="toggleOne" autocomplete="off">
+                <label class="btn btn-outline-primary" for="toggleOne">Toggle 1</label>
+                <input type="checkbox" class="btn-check" id="toggleTwo" autocomplete="off">
+                <label class="btn btn-outline-primary" for="toggleTwo">Toggle 2</label>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="h4 mb-3">Navigation and Cards</h2>
+            <ul class="nav nav-tabs mb-3">
+                <li class="nav-item"><a class="nav-link active" href="#">Tabs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Schedule</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Speakers</a></li>
+            </ul>
+            <ul class="nav nav-pills mb-3">
+                <li class="nav-item"><a class="nav-link active" href="#">Pills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Workshops</a></li>
+            </ul>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <img src="images/banner.png" class="card-img-top" alt="Profile Banner">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Profile Card</h3>
+                            <p class="card-text text-muted">Created with card, card-body, card-title, and card-img-top.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="d-flex align-items-start gap-3 p-3 border rounded bg-white">
+                        <img src="images/avatar.png" class="rounded-circle border border-primary border-3 flex-shrink-0" width="64" height="64" alt="Media Object Avatar">
+                        <div>
+                            <h3 class="h5">Media Object</h3>
+                            <p class="mb-0">Image aligned to the left of the content using Bootstrap flex utilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="h4 mb-3">Spacing, Colors, Display, and Position</h2>
+            <div class="m-3 mt-4 p-2 bg-primary text-white rounded">m-3 mt-4 p-2 utility test</div>
+            <div class="py-5">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card h-100 p-4 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 text-muted">Basic Plan</h3>
+                                <p class="display-5 fw-bold mt-2 mb-4">$9</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>1 User</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>10GB Storage</li>
+                                </ul>
+                                <button class="btn btn-outline-primary mt-auto">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 p-4 shadow border-primary">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 text-primary">Pro Plan</h3>
+                                <p class="display-5 fw-bold mt-2 mb-4">$29</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>5 Users</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>50GB Storage</li>
+                                </ul>
+                                <button class="btn btn-primary mt-auto">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-dark bg-gradient text-white p-4 mb-4">
+                <h3 class="h5">Dark Gradient Card</h3>
+                <p class="mb-0 text-white-50">Styled using bg-dark, bg-gradient, and white text.</p>
+            </div>
+            <div class="d-none d-md-block alert alert-info">d-none d-md-block: Visible on tablets and above.</div>
+            <div class="d-none d-lg-flex justify-content-between align-items-center alert alert-success mb-4">
+                <span>d-none d-lg-flex: Visible as flex on large screens.</span>
+                <span class="badge bg-success">Desktop</span>
+            </div>
+            <div class="row g-4 align-items-center">
+                <div class="col-auto">
+                    <img src="images/avatar.png" class="border border-primary border-3 rounded-circle" width="100" height="100" alt="Rounded Image with Border">
+                </div>
+                <div class="col-auto">
+                    <div class="card shadow-lg">
+                        <div class="card-body text-center">
+                            <h3 class="h5 card-title">Shadow & Rounded Pill</h3>
+                            <button class="btn btn-primary rounded-pill btn-sm">rounded-pill button</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="position-relative d-inline-block">
+                        <img src="images/banner.png" class="img-fluid rounded" style="max-width: 200px;" alt="Banner with Badge">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">New</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="h4 mb-3">Accordion</h2>
+            <div class="accordion" id="exerciseAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#gridInfo">
+                            Grid Classes
+                        </button>
+                    </h3>
+                    <div id="gridInfo" class="accordion-collapse collapse show" data-bs-parent="#exerciseAccordion">
+                        <div class="accordion-body">Use container, row, and responsive col classes for layout.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pluginInfo">
+                            JavaScript Plugins
+                        </button>
+                    </h3>
+                    <div id="pluginInfo" class="accordion-collapse collapse" data-bs-parent="#exerciseAccordion">
+                        <div class="accordion-body">Modal and accordion behavior works through bootstrap.bundle.min.js.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="position-fixed bottom-0 start-0 end-0 bg-dark text-white py-2">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span>Bootstrap Icons</span>
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-light btn-sm" aria-label="Facebook"><i class="bi bi-facebook"></i></button>
+                <button class="btn btn-outline-light btn-sm" aria-label="Twitter"><i class="bi bi-twitter-x"></i></button>
+                <button class="btn btn-outline-light btn-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></button>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="eventModalLabel">Bootstrap Modal</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">This modal is triggered by a Bootstrap button.</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

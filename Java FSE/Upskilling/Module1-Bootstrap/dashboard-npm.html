@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Dashboard</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-md-none">
+        <div class="container-fluid">
+            <span class="navbar-brand fw-bold">Dashboard Menu</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse"
+                aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="sidebarCollapse">
+                <ul class="navbar-nav me-auto mb-2">
+                    <li class="nav-item"><a class="nav-link" href="index-npm.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="dashboard-npm.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register-npm.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="help-npm.html">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-md-3 d-none d-md-block bg-dark bg-gradient text-white p-4 min-vh-100">
+                <h2 class="h5 fw-bold mb-4">Event Manager</h2>
+                <ul class="nav flex-column gap-2">
+                    <li class="nav-item"><a class="nav-link text-white-50" href="index-npm.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white active fw-bold" href="dashboard-npm.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="register-npm.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="help-npm.html">Help</a></li>
+                </ul>
+            </aside>
+
+            <main class="col-md-9 col-12 p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+                    <h1 class="h3">Dashboard Overview</h1>
+                    <span class="text-muted d-none d-md-inline">Welcome back, Admin</span>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-primary bg-gradient text-white h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h6 text-white-50 text-uppercase">Total Users</h3>
+                                <p class="h2 fw-bold m-0">1,250</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-success bg-gradient text-white h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h6 text-white-50 text-uppercase">Active Events</h3>
+                                <p class="h2 fw-bold m-0">12</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-warning bg-gradient text-dark h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h6 text-dark-50 text-uppercase">Pending Approvals</h3>
+                                <p class="h2 fw-bold m-0">4</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-danger bg-gradient text-white h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h6 text-white-50 text-uppercase">System Alerts</h3>
+                                <p class="h2 fw-bold m-0">1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0 bg-light p-4">
+                    <h2 class="h5 mb-3">Sass-Customized Metrics</h2>
+                    <p class="mb-0 text-muted">All cards display using customized variables compiled from our Bootstrap project config.</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
