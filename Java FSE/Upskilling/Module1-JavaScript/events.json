@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Summer Music Festival",
+        "date": "2026-07-20",
+        "seats": 150,
+        "category": "Music"
+    },
+    {
+        "id": 2,
+        "name": "Baking Workshop",
+        "date": "2026-08-15",
+        "seats": 0,
+        "category": "Workshop"
+    },
+    {
+        "id": 3,
+        "name": "Tech Innovation Seminar",
+        "date": "2025-12-01",
+        "seats": 50,
+        "category": "Seminar"
+    },
+    {
+        "id": 4,
+        "name": "Jazz Night Live",
+        "date": "2026-09-05",
+        "seats": 80,
+        "category": "Music"
+    },
+    {
+        "id": 5,
+        "name": "Web Development Bootcamp",
+        "date": "2026-10-10",
+        "seats": 30,
+        "category": "Workshop"
+    }
+]

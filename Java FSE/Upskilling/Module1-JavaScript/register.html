@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration - JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="bg-light pb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <span class="navbar-brand fw-bold">Community Events</span>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="register.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="row g-4">
+            <section class="col-lg-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="h4 mb-4">Event Registration Form</h1>
+                        <form id="registrationForm">
+                            <div id="formErrors" class="mb-3"></div>
+                            <div class="mb-3">
+                                <label class="form-label" for="userName">Name</label>
+                                <input class="form-control" id="userName" name="userName" type="text" autofocus>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="userEmail">Email</label>
+                                <input class="form-control" id="userEmail" name="userEmail" type="email">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="selectedEvent">Select Event</label>
+                                <select class="form-select" id="selectedEvent" name="selectedEvent">
+                                    <option value="">Choose event</option>
+                                    <option value="1">Summer Music Festival</option>
+                                    <option value="2">Baking Workshop</option>
+                                    <option value="3">Tech Innovation Seminar</option>
+                                    <option value="4">Jazz Night Live</option>
+                                    <option value="5">Web Development Bootcamp</option>
+                                </select>
+                            </div>
+                            <button id="registerBtn" class="btn btn-primary w-100" type="submit">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="col-lg-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="h4 mb-4">Login Form</h2>
+                        <form>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="loginEmail" type="email" placeholder="name@example.com">
+                                <label for="loginEmail">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="loginPassword" type="password" placeholder="Password">
+                                <label for="loginPassword">Password</label>
+                            </div>
+                            <button class="btn btn-success w-100" type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        window.addEventListener("beforeunload", (event) => {
+            const name = document.getElementById("userName").value;
+            const email = document.getElementById("userEmail").value;
+            if (name || email) {
+                event.preventDefault();
+                event.returnValue = "You have unsaved changes in your registration form.";
+            }
+        });
+    </script>
+</body>
+
+</html>
