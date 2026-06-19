@@ -1,0 +1,22 @@
+.Name {
+    font-weight: 300;
+    color: blue;
+}
+
+.Score {
+
+    color: forestgreen;
+}
+
+.School {
+    color: crimson;
+}
+
+.Total {
+    color: darkmagenta;
+}
+
+.formatstyle {
+    text-align: center;
+    font-size: large;
+}
