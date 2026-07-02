@@ -157,3 +157,7 @@ docker-compose.override.yml
 *.bak
 *.swp
 *.orig
+
+# Keep PL/SQL README local only
+Java FSE/Deepskilling/PL Sql/README.md
+
