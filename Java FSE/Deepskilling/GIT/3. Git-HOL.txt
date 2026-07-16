@@ -1,0 +1,27 @@
+Objectives
+Explain branching and merging
+Explain about creating a branch request in GitLab
+Explain about creating a merge request in GitLab
+In this hands-on lab, you will learn how to:
+Construct a branch, do some changes in the branch, and merge it with master (or trunk)
+Prerequisites
+The following are the pre-requisites to complete this hands-on lab:
+Setting up Git environment with P4Merge tool for Windows
+Notes*:
+Please follow the below steps for creating a free account in GitHub.
+Do not use cognizant credentials to login to GitHub.
+Estimated time to complete this lab: 30 minutes.
+Please follow the instruction to complete the hands-on. Each instruction expects a command for the Git Bash.
+Branching:
+Create a new branch “GitNewBranch”.
+List all the local and remote branches available in the current trunk. Observe the “*” mark which denote the current pointing branch.
+Switch to the newly created branch. Add some files to it with some contents.
+Commit the changes to the branch.
+Check the status with “git status” command.
+Merging:
+Switch to the master
+List out all the differences between trunk and branch. These provide the differences in command line interface.
+List out all the visual differences between master and branch using P4Merge tool.
+Merge the source branch to the trunk.
+Observe the logging after merging using “git log –oneline –graph –decorate”
+Delete the branch after merging with the trunk and observe the git status.

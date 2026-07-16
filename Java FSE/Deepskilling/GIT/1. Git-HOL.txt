@@ -1,0 +1,50 @@
+Objectives
+Familiar with Git commands like git init, git status, git add, git commit, git push, and git pull.
+In this hands-on lab, you will learn how to
+Setup your machine with Git Configuration
+Integrate notepad++.exe to Git and make it a default editor
+Add a file to source code repository
+Prerequisites
+Install Git Bash client in your machine
+Notes*:
+Please follow the below steps for creating a free account in GitHub.
+Don’t use cognizant credentials to login to GitHub.
+Estimated time to complete this lab: 30 minutes.
+Step 1: Setup your machine with Git Configuration
+To create a new repository, signup with GitLab and register your credentials
+Login to GitLab and create a “GitDemo” project
+To check if Git client is installed properly: Open Git bash shell and execute
+If output shows Git with its version information that indicates, that Git Client installs properly.
+To configure user level configuration of user ID and email ID execute
+To check if the configuration is properly set, execute the following command.
+Step 2: Integrate notepad++.exe to Git and make it a default editor
+To check, if notepad++.exe execute from Git bash
+If Git bash could not able to recognize notepad++ command that implies notepad++.exe is note added to the environment path variable.
+To add path of notepad++.exe to environment variable, go to control panel -> System -> Advanced System settings. Go to Advanced tab -> Environment variables -> Add path of notepad++.exe to the path user variable by clicking on “Edit”
+Exit Git bash shell, open bash shell and execute
+Now, notepad++ will open from Git bash shell
+To create an alias command for notepad++.exe, execute
+It will open notepad++ from bash shell, and create a user profile by adding the line in notepad++
+To configure the editor, execute the command
+To verify if notepad++ is the default editor, execute the command
+Here ‘-e’ option implies editor
+It will show the entire global configuration as shown below,
+Step 3: Add a file to source code repository
+Open Git bash shell and create a new project “GitDemo” by executing the command
+Git bash initializes the “GitDemo” repository. To verify, execute the command
+It will display all the hidden files in the Git  “working directory”.
+To create a file “welcome.txt” and add content to the file, execute the command
+To verify if the file “welcome.txt” is created, execute
+To verify the content, execute the command
+Check the status by executing
+Now the file “welcome.txt” is available in Git “working directory”
+To make the file to be tracked by Git repository, execute the command
+To add multi line comments, we are opening default editor to comment. Execute the command
+Notepad++ editor will open and to add multi-line comment with default editor
+To check if local and “Working Directory” git repository are same, execute git status
+welcome.txt is added to the local repository.
+Signup with GitLab and create a remote repository “GitDemo”
+To pull the remote repository, execute
+git pull origin master
+To push the local to remote repository, execute
+git push origin master

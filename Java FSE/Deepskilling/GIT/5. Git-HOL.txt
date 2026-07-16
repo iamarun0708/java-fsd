@@ -1,0 +1,17 @@
+Objectives
+Explain how to clean up and push back to remote Git
+In this hands-on lab, you will learn how to:
+Execute steps involving clean up and push back to remote Git.
+Prerequisites
+The following are the pre-requisites to complete this hands-on lab:
+Hands-on ID: “Git-T03-HOL_002”
+Notes*:
+Please follow the below steps for creating a free account in GitHub.
+Do not use cognizant credentials to login to GitHub.
+Estimated time to complete this lab: 10 minutes.
+Please follow the instructions to complete the hands-on. Each instruction expects a command for the Git Bash.
+Verify if master is in clean state.
+List out all the available branches.
+Pull the remote git repository to the master
+Push the changes, which are pending from “Git-T03-HOL_002” to the remote repository.
+Observe if the changes are reflected in the remote repository.

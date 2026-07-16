@@ -161,3 +161,9 @@ docker-compose.override.yml
 # Keep PL/SQL README local only
 Java FSE/Deepskilling/PL Sql/README.md
 
+# Backups & Logs
+_repo_clone_backup/
+.git.backup/
+_local_files.txt
+_repo_files.txt
+

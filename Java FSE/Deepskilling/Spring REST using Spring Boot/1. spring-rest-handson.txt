@@ -1,0 +1,150 @@
+Objectives
+Demonstrate creation of Spring Boot Application
+Spring initializr, https://start.spring.io, @SpringBootApplication, SpringApplication.run()
+Ref - https://start.spring.io
+Explain the need and benefits of Spring Boot
+Makes Java development easy, avoids tedious development steps, reduces development time, avoids writing boilerplate code, provides embedded tomcat server, avoid XML configuration
+Ref - https://www.journaldev.com/7969/spring-boot-tutorial
+Demonstrate loading bean from spring configuration file
+Spring configuration xml, spring xml schema spring-beans.xsd, <bean>, id, class, <constructor-arg>, <property>, name, value, ClassPathXmlApplicationContext, ApplicationContext, context.getBean(), singleton scope, prototype scope
+Ref - https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html
+IoC Container - https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans
+Scopes - https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-factory-scopes
+Constructor Injection - https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-constructor-injection
+Setter method injection - https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-setter-injection
+Demonstrate inclusion of logging in Spring Boot Application
+application.properties, logging.level, logging.pattern, server.port, LoggerFactory, Logger, log levels (trace, debug, info, warn, error)
+Ref - https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html
+Hands on 1
+Create a Spring Web Project using Maven Follow steps below to create a project:
+Go to https://start.spring.io/
+Change Group as “com.cognizant”
+Change Artifact Id as “spring-learn”
+Select Spring Boot DevTools and Spring Web
+Create and download the project as zip
+Extract the zip in root folder to Eclipse Workspace
+Build the project using ‘mvn clean package -Dhttp.proxyHost=proxy.cognizant.com -Dhttp.proxyPort=6050 -Dhttps.proxyHost=proxy.cognizant.com -Dhttps.proxyPort=6050 -Dhttp.proxyUser=123456’ command in command line
+Import the project in Eclipse "File > Import > Maven > Existing Maven Projects > Click Browse and select extracted folder > Finish"
+Include logs to verify if main() method of SpringLearnApplication.
+Run the SpringLearnApplication class.
+SME to walk through the following aspects related to the project created:
+src/main/java - Folder with application code
+src/main/resources - Folder for application configuration
+src/test/java - Folder with code for testing the application
+SpringLearnApplication.java - Walkthrough the main() method.
+Purpose of @SpringBootApplication annotation
+pom.xml
+Walkthrough all the configuration defined in XML file
+Open 'Dependency Hierarchy' and show the dependency tree.
+Hands on 2
+Spring Core – Load SimpleDateFormat from Spring Configuration XML SimpleDateFormat with the pattern ‘dd/MM/yyyy’ is created in multiple places of an application. To avoid creation of SimpleDateFormat in multiple places, define a bean in Spring XML Configuration file and retrieve the date.Follow steps below to implement:
+Create spring configuration file date-format.xml in src/main/resources folder of 'spring-learn' project
+Open https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-factory-metadata
+Copy the XML defined in the section of previous step URL and paste it into date-format.xml
+Define bean tag in the XML with for date format. Refer code below.
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="dateFormat" class="java.text.SimpleDateFormat">
+<constructor-arg value="dd/MM/yyyy" />
+</bean>
+</beans>
+Create new method displayDate() in SpringLearnApplication.java
+In displayDate() method create the ApplicationContext. Refer code below:
+ApplicationContext context = new ClassPathXmlApplicationContext("date-format.xml");
+Get the dateFormat using getBean() method. Refer code below.
+SimpleDateFormat format = context.getBean("dateFormat", SimpleDateFormat.class);
+Using the format variable try to parse string '31/12/2018' to Date class and display the result using System.out.println.
+Run the application as 'Java Application' and check the result in console log output.
+Troubleshooting Tips If the tomcat port has a conflict and the server is not starting include the below property in application.properties file in src/main/resources folder.
+Hands on 3
+Spring Core - Incorporate Logging Incorporate logging in the Spring Boot project created in previous hands on. Refer steps below:
+Create application.properties if not yet created in src/main/resources folder
+Add below lines in application.properties
+logging.level.org.springframework=info
+logging.level.com.cognizant.springlearn=debug
+logging.pattern.console=%d{yyMMdd}|%d{HH:mm:ss.SSS}|%-20.20thread|%5p|%-25.25logger{25}|%25M|%m%n
+In SpringLearnApplication.java include the following imports:
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+Include the below static variable in SpringLearnApplication.java:
+private static final Logger LOGGER = LoggerFactory.getLogger(SpringLearnApplication.class);
+Include info log on start and end of method. Debug log for displaying the date (refer code below)
+public void displayDate() {
+LOGGER.info(“START”);
+//..
+LOGGER.debug(date);
+//..
+LOGGER.info(“END”);
+}
+IMPORTANT NOTE: Going forward all methods should incorporate logging as specified above. Never use System.out.println().
+Hands on 4
+Spring Core – Load Country from Spring Configuration XML An airlines website is going to support booking on four countries. There will be a drop down on the home page of this website to select the respective country. It is also important to store the two-character ISO code of each country.
+Code
+Name
+US
+United States
+DE
+Germany
+IN
+India
+JP
+Japan
+Above data has to be stored in spring configuration file. Write a program to read this configuration file and display the details.Steps to implement
+Pick any one of your choice country to configure in Spring XML configuration named country.xml.
+Create a bean tag in spring configuration for country and set the property and values
+<bean id="country" class="com.cognizant.springlearn.Country">
+<property name="code" value="IN" />
+<property name="name" value="India" />
+</bean>
+Create Country class with following aspects:
+Instance variables for code and name
+Implement empty parameter constructor with inclusion of debug log within the constructor with log message as “Inside Country Constructor.”
+Generate getters and setters with inclusion of debug with relevant message within each setter and getter method.
+Generate toString() method
+Create a method displayCountry() in SpringLearnApplication.java, which will read the country bean from spring configuration file and display the country details. ClassPathXmlApplicationContext, ApplicationContext and context.getBean(“beanId”, Country.class). Refer sample code for displayCountry() method below.
+ApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
+Country country = (Country) context.getBean("country", Country.class);
+LOGGER.debug("Country : {}", country.toString());
+Invoke displayCountry() method in main() method of SpringLearnApplication.java.
+Execute main() method and check the logs to find out which constructors and methods were invoked.
+SME to provide more detailing about the following aspects:
+bean tag, id attribute, class attribute, property tag, name attribute, value attribute
+ApplicationContext, ClassPathXmlApplicationContext
+What exactly happens when context.getBean() is invoked
+Hands on 5
+Spring Core – Demonstration of Singleton Scope and Prototype Scope The Country bean done in the previous hands on will be used to demonstrate the scopes in Spring. Implement the steps below.Follow steps below to demonstrate Singleton Scope
+Include a line in displayCountry() to get country bean reference one more time from the same application context. Only the third line of the below code snippet should be copied and pasted.
+ApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
+Country country = context.getBean("country", Country.class);
+Country anotherCountry = context.getBean("country", Country.class);
+The constructor will be called only once, which means that only one instance of Country bean is created
+Follow steps below to demonstrate Prototype Scope
+Include scope="prototype" attribute in bean definition xml.
+<bean id="country" class="com.cognizant.springlearn.Country" scope="prototype">
+Run the application
+Constructor will be called twice, which means that two instances of country is created.
+Hands on 6
+Spring Core – Load list of countries from Spring Configuration XML Our main objective was to retrieve the list of four countries for the airlines website. Refer steps below to get this incorporated.
+Create a separate bean for each of the four country in country.xml.
+Create an ArrayList of Country in country.xml. Refer code below.
+<bean id="countryList" class="java.util.ArrayList">
+<constructor-arg>
+<list>
+<ref bean="in"></ref>
+<ref bean="us"></ref>
+<ref bean="de"></ref>
+<ref bean="jp"></ref>
+</list>
+</constructor-arg>
+</bean>
+Include new method displayCountries() in SpringLearnApplication.java
+In displayCountries() read the country list created above
+Display the list of countries as debug log.
+SME to provide detailing on below aspects:
+<list>
+<ref>
+bean attribute
+IMPORTANT NOTE: Do not forget to include the start and end logs in this new method.
